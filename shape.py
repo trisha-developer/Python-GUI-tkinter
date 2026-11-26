@@ -65,3 +65,19 @@ canvas.tag_bind(ball,"<ButtonPress-1>",start_drag)
 canvas.tag_bind(ball,"<B1-Motion>",do_drag)
 
 root.mainloop()"""
+
+#showing images on a canvas
+
+"""
+import tkinter as tk
+
+root=tk.Tk()
+canvas=tk.Canvas(root,width=900,height=600)
+canvas.pack()
+
+img=tk.PhotoImage(file="logo.png")
+canvas.create_image(0,0,image=img, anchor="nw")
+canvas.image=img
+
+root.mainloop()
+"""
