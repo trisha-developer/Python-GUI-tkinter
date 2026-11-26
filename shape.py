@@ -40,3 +40,28 @@ def animate():
 animate()
 
 """
+#moving objects with the mouse(drag and drop)
+"""
+import tkinter as tk
+root= tk.Tk()
+root.title("Drag a circle")
+
+canvas = tk.Canvas(root,width=500,height=350,bg="#fff")
+canvas.pack()
+
+ball= canvas.create_oval(200,130,260,190,fill="tomato",outline="")
+drag={"x":0,"y":0}
+
+def start_drag(event):
+    drag["x"],drag["y"]=event.x,event.y
+
+def do_drag(event):
+    dx=event.x -drag["x"]
+    dy=event.y -drag["y"]
+    canvas.move(ball,dx,dy)
+    drag["x"],drag["y"]=event.x,event.y
+
+canvas.tag_bind(ball,"<ButtonPress-1>",start_drag)
+canvas.tag_bind(ball,"<B1-Motion>",do_drag)
+
+root.mainloop()"""
